@@ -36,3 +36,13 @@ def load_model(model_type='simple_lstm'):
         model = models.load_model(CONFIG['simple_lstm_path'])
 
     return model
+
+
+def evaluate_prediction(y_pred):
+    with open(CONFIG["class_mapping_path"], "rb") as input_file:
+        class_mapping = pickle.load(input_file)
+
+    if y_pred < 0.5:
+        return class_mapping[0]
+    elif y_pred >= 0.5:
+        return class_mapping[1]

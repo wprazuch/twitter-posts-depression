@@ -19,5 +19,5 @@ if user_input != "":
     user_input = np.array([user_input])
     input_processed = utils.preprocess_sequence_data(user_input)
     y_pred = model.predict(input_processed)
-
-    st.text(str(y_pred))
+    result = utils.evaluate_prediction(y_pred)
+    st.text(result)
