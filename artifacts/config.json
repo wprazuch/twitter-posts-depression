@@ -1,5 +1,6 @@
 {
     "MAXLEN": 50,
     "tokenizer_path": "artifacts/tokenizer.pkl",
-    "data_path": "dataset/training1600000.csv"
+    "data_path": "dataset/training1600000.csv",
+    "simple_lstm_path": "models/simple_lstm.h5"
 }

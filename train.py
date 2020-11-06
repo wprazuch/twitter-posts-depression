@@ -28,9 +28,11 @@ def main():
         optimizer=Adam(learning_rate=1e-4),
         loss='binary_crossentropy', metrics=['accuracy'])
 
-    history = model.fit(X_train_ready, y_train, epochs=3, batch_size=512, validation_split=0.2)
+    history = model.fit(X_train_ready, y_train, epochs=4, batch_size=512, validation_split=0.2)
 
     model.evaluate(X_test_ready, y_test)
+
+    model.save(r'models/simple_lstm.h5')
 
 
 if __name__ == '__main__':

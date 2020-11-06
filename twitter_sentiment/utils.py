@@ -2,6 +2,7 @@ import pickle
 
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras import models
 import json
 import pandas as pd
 
@@ -28,3 +29,10 @@ def load_data():
     target[target == 4] = 1
 
     return data, target
+
+
+def load_model(model_type='simple_lstm'):
+    if model_type == 'simple_lstm':
+        model = models.load_model(CONFIG['simple_lstm_path'])
+
+    return model
